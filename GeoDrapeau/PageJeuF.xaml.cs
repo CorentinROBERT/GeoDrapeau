@@ -26,6 +26,7 @@ namespace GeoDrapeau
     public sealed partial class PageJeuF : Page
     {
         int score = 0;
+        const int TEMPS_DEPART = 20;
         TabDrapeau tabDrapeaux = new TabDrapeau();
         TabDrapeau facile = new TabDrapeau();
         Drapeau drapeauSoluce = new Drapeau("",0,"");
@@ -50,10 +51,11 @@ namespace GeoDrapeau
             btn2.Click += btnClick;
             btn3.Click += btnClick;
             
-            temps.TempsDepart = 20;
+            temps.TempsDepart = TEMPS_DEPART;
             temps.start();
 
-            
+            menuApparait(false);
+
             timer.Interval = new System.TimeSpan(0, 0, 1);
             timer.Tick += maj;
             timer.Start();
@@ -88,15 +90,22 @@ namespace GeoDrapeau
             temps.stop();
             timer.Stop();
 
+            menuApparait(true);
+
+
             btn.IsEnabled = false;
             btn1.IsEnabled = false;
             btn2.IsEnabled = false;
             btn3.IsEnabled = false;
 
             btnPause.IsEnabled = false;
-            btnLecture.IsEnabled = true;
+            btnLecture.IsEnabled = true;   
         }
         private void OnLecture_Click(object sender, RoutedEventArgs e)
+        {
+            lecture();
+        }
+        public void lecture()
         {
             temps.start();
             timer.Start();
@@ -105,6 +114,8 @@ namespace GeoDrapeau
             btn1.IsEnabled = true;
             btn2.IsEnabled = true;
             btn3.IsEnabled = true;
+
+            menuApparait(false);
 
             btnPause.IsEnabled = true;
             btnLecture.IsEnabled = false;
@@ -119,6 +130,8 @@ namespace GeoDrapeau
                 btn1.IsEnabled = false;
                 btn2.IsEnabled = false;
                 btn3.IsEnabled = false;
+
+                menuApparait(false);
             }
             else
             {
@@ -168,11 +181,38 @@ namespace GeoDrapeau
                 score+=drapeauSoluce.Niveau;
                 lblScore.Text = score.ToString();
             }
+            jouer();
+        }
+
+        private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
+        {
+            menuApparait(false);
+
+            temps.TempsDepart = TEMPS_DEPART;
+
+            lecture();
+
+            jouer();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+        public void menuApparait(Boolean choix)
+        {
+            if (choix)
+            {
+                rect.Visibility = Visibility.Visible;
+                btnRecommencer.Visibility = Visibility.Visible;
+                btnMenuPrincipal.Visibility = Visibility.Visible;
+            }
             else
             {
-
+                rect.Visibility = Visibility.Collapsed;
+                btnRecommencer.Visibility = Visibility.Collapsed;
+                btnMenuPrincipal.Visibility = Visibility.Collapsed;
             }
-            jouer();
         }
     }
 }

@@ -48,7 +48,7 @@ namespace GeoDrapeau
             if (rootFrame.CanGoBack)
             {
                 e.Handled = true;
-                rootFrame.GoBack();
+                Frame.Navigate(typeof(MainPage));
             }
         }
     }

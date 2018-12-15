@@ -24,6 +24,7 @@ namespace GeoDrapeau
     /// </summary>
     public sealed partial class PageJeuM : Page
     {
+        const int TEMPS_DEPART = 20;
         int score = 0;
         TabDrapeau tabDrapeaux = new TabDrapeau();
         TabDrapeau moyen = new TabDrapeau();
@@ -51,9 +52,10 @@ namespace GeoDrapeau
             btn4.Click += btnClick;
             btn5.Click += btnClick;
 
-            temps.TempsDepart = 20;
+            temps.TempsDepart = TEMPS_DEPART;
             temps.start();
 
+            menuApparait(false);
 
             timer.Interval = new System.TimeSpan(0, 0, 1);
             timer.Tick += maj;
@@ -96,10 +98,16 @@ namespace GeoDrapeau
             btn4.IsEnabled = false;
             btn5.IsEnabled = false;
 
+            menuApparait(true);
+
             btnPause.IsEnabled = false;
             btnLecture.IsEnabled = true;
         }
         private void OnLecture_Click(object sender, RoutedEventArgs e)
+        {
+            lecture();
+        }
+        public void lecture()
         {
             temps.start();
             timer.Start();
@@ -111,10 +119,11 @@ namespace GeoDrapeau
             btn4.IsEnabled = true;
             btn5.IsEnabled = true;
 
+            menuApparait(false);
+
             btnPause.IsEnabled = true;
             btnLecture.IsEnabled = false;
         }
-
         public void jouer()
         {
 
@@ -126,6 +135,8 @@ namespace GeoDrapeau
                 btn3.IsEnabled = false;
                 btn4.IsEnabled = false;
                 btn5.IsEnabled = false;
+
+                menuApparait(true);
             }
             else
             {
@@ -194,6 +205,36 @@ namespace GeoDrapeau
 
             }
             jouer();
+        }
+        private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
+        {
+            menuApparait(false);
+
+            temps.TempsDepart = TEMPS_DEPART;
+
+            lecture();
+
+            jouer();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+        public void menuApparait(Boolean choix)
+        {
+            if (choix)
+            {
+                rect.Visibility = Visibility.Visible;
+                btnRecommencer.Visibility = Visibility.Visible;
+                btnMenuPrincipal.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                rect.Visibility = Visibility.Collapsed;
+                btnRecommencer.Visibility = Visibility.Collapsed;
+                btnMenuPrincipal.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

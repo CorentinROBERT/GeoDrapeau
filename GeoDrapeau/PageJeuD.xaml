@@ -38,5 +38,8 @@
             <Button x:Name="btn7" Content="Button" HorizontalAlignment="Stretch" Margin="1210,98,0,0" VerticalAlignment="Stretch" Width="290" FontSize="36"/>
             <Button x:Name="btn6" Content="Button" HorizontalAlignment="Stretch" Margin="831,98,379,0" VerticalAlignment="Stretch" Width="290" FontSize="36"/>
         </Grid>
+        <Rectangle x:Name="rect" Margin="0,48,0,0" Fill="#FF7C7C7C"/>
+        <Button x:Name="btnRecommencer" Content="Recommencer" HorizontalAlignment="Stretch" Height="151" Margin="419,239,418,0" VerticalAlignment="Top" FontSize="48" Click="BtnRecommencer_Click"/>
+        <Button x:Name="btnMenuPrincipal" Content="Menu principal" HorizontalAlignment="Stretch" Height="151" Margin="419,584,418,0" VerticalAlignment="Top" FontSize="48" Click="Button_Click"/>
     </Grid>
 </Page>
