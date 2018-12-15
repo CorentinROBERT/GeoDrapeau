@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -26,9 +27,18 @@ namespace GeoDrapeau
         {
             this.InitializeComponent();
             Frame rootFrame = Window.Current.Content as Frame;
+            rootFrame.Navigated += OnRetour;
+        }
+        void OnRetour(Object sender, NavigationEventArgs e)
+        {
+            if (((Frame)sender).CanGoBack)
+            {
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility
+                = AppViewBackButtonVisibility.Collapsed;
+            }
         }
 
-        private void btnJouer_Click(object sender, RoutedEventArgs e)
+            private void btnJouer_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ChoixMode));
         }
