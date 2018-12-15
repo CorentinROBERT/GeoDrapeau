@@ -25,11 +25,11 @@
         <Image x:Name="imgDrapeau" HorizontalAlignment="Center" Height="421" Margin="0,147,0,0" VerticalAlignment="Top" Width="367" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Source="/Assets/StoreLogo.png" Stretch="Uniform"/>
         <TextBlock x:Name="lblTImer" Height="106" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="0,0,1186,846" HorizontalAlignment="Left"><Run Text="TIMER"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="lblScore" HorizontalAlignment="Right" Height="106" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="0,0,0,852" Text="Score"/>
-        <Grid x:Name="gridButton" HorizontalAlignment="Stretch" Height="166" Margin="0,834,0,0" VerticalAlignment="Top">
+        <Grid x:Name="gridButton" Margin="0,834,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
-                    <GradientStop Color="#FF7A7979" Offset="1"/>
+                    <GradientStop Color="#7F7A7979" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Button x:Name="btn" Content="Button" HorizontalAlignment="Left" Margin="16,7,0,0" VerticalAlignment="Top" Width="290" Height="68" FontSize="36"/>
@@ -39,7 +39,7 @@
             <Button x:Name="btn5" Content="Button" HorizontalAlignment="Right" Margin="0,88,10,10" VerticalAlignment="Stretch" FontSize="36" Width="290"/>
             <Button x:Name="btn2" Content="Button" HorizontalAlignment="Right" Margin="0,7,10,91" VerticalAlignment="Stretch" FontSize="36" Width="290"/>
         </Grid>
-        <Rectangle x:Name="rect" Margin="1,48,-1,0" Fill="#FF7C7C7C"/>
+        <Rectangle x:Name="rect" Margin="-1,48,1,0" Fill="#FF7C7C7C"/>
         <Button x:Name="btnRecommencer" Content="Recommencer" HorizontalAlignment="Stretch" Height="151" Margin="419,239,418,0" VerticalAlignment="Top" FontSize="48" Click="BtnRecommencer_Click"/>
         <Button x:Name="btnMenuPrincipal" Content="Menu principal" HorizontalAlignment="Stretch" Height="151" Margin="419,584,418,0" VerticalAlignment="Top" FontSize="48" Click="Button_Click"/>
     </Grid>

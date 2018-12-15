@@ -9,11 +9,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/flag/AAGlobe.png" Stretch="Uniform"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
             <RowDefinition Height="91*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnFacile" Content="FACILE" HorizontalAlignment="Center" Height="214" Margin="0,37,0,0" VerticalAlignment="Top" Width="721" FontSize="72" Grid.RowSpan="2" Click="btnFacile_Click">
+        <Button x:Name="btnFacile" Content="FACILE" HorizontalAlignment="Center" Height="214" Margin="0,165,0,0" VerticalAlignment="Top" Width="350" FontSize="72" Click="btnFacile_Click" FocusVisualSecondaryBrush="{x:Null}" Grid.Row="1">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -21,7 +24,10 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnMoyen" Content="MOYEN" HorizontalAlignment="Center" Height="214" Margin="0,308.561,0,0" VerticalAlignment="Top" Width="721" FontSize="72" Grid.Row="1" Click="btnMoyen_Click">
+        <Button x:Name="btnMoyen" Content="MOYEN" HorizontalAlignment="Stretch" Margin="334,455,816,241" VerticalAlignment="Stretch" FontSize="72" Click="btnMoyen_Click" Grid.Row="1" Width="350">
+            <Button.FocusVisualSecondaryBrush>
+                <ImageBrush ImageSource="/Assets/flag/Chili.png" Stretch="Uniform"/>
+            </Button.FocusVisualSecondaryBrush>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -29,7 +35,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnDifficile" Content="DIFFICILE" HorizontalAlignment="Center" Height="214" Margin="0,670.561,0,0" VerticalAlignment="Top" Width="721" FontSize="72" Grid.Row="1" Click="btnDifficile_Click">
+        <Button x:Name="btnDifficile" Content="DIFFICILE" HorizontalAlignment="Stretch" Margin="791,455,359,241" VerticalAlignment="Stretch" FontSize="72" Grid.Row="1" Click="btnDifficile_Click" Width="350" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF0F0F0"/>

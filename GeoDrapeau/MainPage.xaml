@@ -9,13 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="btnJouer" Content="JOUER" HorizontalAlignment="Center" Margin="0,26,0,0" VerticalAlignment="Top" Height="205" Width="725" FontSize="72" Click="btnJouer_Click">
-            <Button.FocusVisualSecondaryBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF8F8F8F" Offset="0.007"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.FocusVisualSecondaryBrush>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/flag/AAGlobe.png" Stretch="Uniform"/>
+        </Grid.Background>
+        <Button x:Name="btnJouer" Content="JOUER" HorizontalAlignment="Stretch" Margin="26,98,749,0" VerticalAlignment="Top" Height="205" FontSize="72" Click="btnJouer_Click" FocusVisualPrimaryBrush="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FocusVisualSecondaryBrush="{x:Null}" ManipulationMode="Rotate">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -23,7 +20,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnScore" Content="SCORES" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Height="226" Width="725" FontSize="72" Click="btnScore_Click">
+        <Button x:Name="btnScore" Content="SCORES" HorizontalAlignment="Stretch" Margin="388,0,387,0" VerticalAlignment="Center" Height="226" FontSize="72" Click="btnScore_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
@@ -31,7 +28,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="btnQuitter" Content="QUITTER" HorizontalAlignment="Center" Margin="0,754,0,0" VerticalAlignment="Top" Height="221" Width="726" FontSize="72" Click="btnQuitter_Click">
+        <Button x:Name="btnQuitter" Content="QUITTER" HorizontalAlignment="Stretch" Margin="750,671,24,0" VerticalAlignment="Top" Height="221" FontSize="72" Click="btnQuitter_Click" RenderTransformOrigin="0.311,-0.538">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>

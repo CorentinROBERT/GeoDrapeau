@@ -25,11 +25,11 @@
         <Image x:Name="imgDrapeau" HorizontalAlignment="Center" Height="421" Margin="0,147,0,0" VerticalAlignment="Top" Width="367" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Source="/Assets/StoreLogo.png" Stretch="Uniform"/>
         <TextBlock x:Name="lblTImer" Height="106" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="0,0,1186,846" HorizontalAlignment="Left"><Run Text="TIMER"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="lblScore" HorizontalAlignment="Right" Height="106" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="0,0,0,852" Text="Score"/>
-        <Grid x:Name="gridButton" HorizontalAlignment="Stretch" Height="166" Margin="0,834,0,0" VerticalAlignment="Top">
+        <Grid x:Name="gridButton" Margin="0,834,0,0" VerticalAlignment="Stretch">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="White"/>
-                    <GradientStop Color="#FF7A7979" Offset="1"/>
+                    <GradientStop Color="#7F7A7979" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
             <Button x:Name="btn" Content="Button" HorizontalAlignment="Stretch" Margin="0,0,1210,0" VerticalAlignment="Top" Width="290" Height="68" FontSize="36"/>
