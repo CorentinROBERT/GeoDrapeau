@@ -64,6 +64,7 @@ namespace GeoDrapeau
 
             jouer();
         }
+
         public void maj(object sender, object e)
         {
             if(temps.TempsDepart == 0)
@@ -99,7 +100,8 @@ namespace GeoDrapeau
             btn3.IsEnabled = false;
 
             btnPause.IsEnabled = false;
-            btnLecture.IsEnabled = true;   
+            btnLecture.IsEnabled = true;
+            
         }
         private void OnLecture_Click(object sender, RoutedEventArgs e)
         {
@@ -188,7 +190,6 @@ namespace GeoDrapeau
 
         private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
         {
-            Debug.Write("RECOMMENCER");
 
             menuApparait(false);
 

@@ -102,6 +102,10 @@
       <DependentUpon>ChoixMode.xaml</DependentUpon>
     </Compile>
     <Compile Include="Drapeau.cs" />
+    <Compile Include="FinPartiexaml.xaml.cs">
+      <DependentUpon>FinPartiexaml.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Joueur.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -361,6 +365,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChoixMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinPartiexaml.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

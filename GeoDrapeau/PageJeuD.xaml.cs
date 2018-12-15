@@ -54,11 +54,10 @@ namespace GeoDrapeau
             btn6.Click += btnClick;
             btn7.Click += btnClick;
 
-            menuApparait(false);
-
             temps.TempsDepart = TEMPS_DEPART;
             temps.start();
 
+            menuApparait(false);
 
             timer.Interval = new System.TimeSpan(0, 0, 1);
             timer.Tick += maj;
@@ -94,6 +93,8 @@ namespace GeoDrapeau
             temps.stop();
             timer.Stop();
 
+            menuApparait(true);
+
             btn.IsEnabled = false;
             btn1.IsEnabled = false;
             btn2.IsEnabled = false;
@@ -102,8 +103,6 @@ namespace GeoDrapeau
             btn5.IsEnabled = false;
             btn6.IsEnabled = false;
             btn7.IsEnabled = false;
-
-            menuApparait(true);
 
             btnPause.IsEnabled = false;
             btnLecture.IsEnabled = true;
@@ -144,6 +143,8 @@ namespace GeoDrapeau
                 btn5.IsEnabled = false;
                 btn6.IsEnabled = false;
                 btn7.IsEnabled = false;
+
+                btnPause.IsEnabled = false;
 
                 menuApparait(true);
             }
@@ -230,9 +231,9 @@ namespace GeoDrapeau
         {
             menuApparait(false);
 
-            temps.TempsDepart = TEMPS_DEPART;
-
             temps.EstFini = false;
+
+            temps.TempsDepart = TEMPS_DEPART;
 
             lecture();
 
@@ -245,7 +246,7 @@ namespace GeoDrapeau
         }
         public void menuApparait(Boolean choix)
         {
-            if (choix)
+            if(choix)
             {
                 rect.Visibility = Visibility.Visible;
                 btnRecommencer.Visibility = Visibility.Visible;
