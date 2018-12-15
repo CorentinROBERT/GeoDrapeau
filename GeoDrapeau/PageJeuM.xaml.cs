@@ -210,6 +210,7 @@ namespace GeoDrapeau
         {
             menuApparait(false);
 
+            temps.EstFini = false;
             temps.TempsDepart = TEMPS_DEPART;
 
             lecture();

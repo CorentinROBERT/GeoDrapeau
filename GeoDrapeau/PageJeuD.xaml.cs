@@ -232,6 +232,8 @@ namespace GeoDrapeau
 
             temps.TempsDepart = TEMPS_DEPART;
 
+            temps.EstFini = false;
+
             lecture();
 
             jouer();

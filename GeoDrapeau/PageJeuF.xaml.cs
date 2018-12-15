@@ -131,7 +131,9 @@ namespace GeoDrapeau
                 btn2.IsEnabled = false;
                 btn3.IsEnabled = false;
 
-                menuApparait(false);
+                btnPause.IsEnabled = false;
+
+                menuApparait(true);
             }
             else
             {
@@ -186,7 +188,11 @@ namespace GeoDrapeau
 
         private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
         {
+            Debug.Write("RECOMMENCER");
+
             menuApparait(false);
+
+            temps.EstFini = false;
 
             temps.TempsDepart = TEMPS_DEPART;
 
@@ -201,7 +207,7 @@ namespace GeoDrapeau
         }
         public void menuApparait(Boolean choix)
         {
-            if (choix)
+            if(choix)
             {
                 rect.Visibility = Visibility.Visible;
                 btnRecommencer.Visibility = Visibility.Visible;
