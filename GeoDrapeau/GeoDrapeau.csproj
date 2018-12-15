@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{512AB7E7-B4DF-4264-B9A0-35BF9DF804C4}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeoDrapeau</RootNamespace>
+    <AssemblyName>GeoDrapeau</AssemblyName>
+    <DefaultLanguage>fr-FR</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>GeoDrapeau_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AjouterScore.xaml.cs">
+      <DependentUpon>AjouterScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChoixMode.xaml.cs">
+      <DependentUpon>ChoixMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Drapeau.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageJeuD.xaml.cs">
+      <DependentUpon>PageJeuD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageJeuF.xaml.cs">
+      <DependentUpon>PageJeuF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageJeuM.xaml.cs">
+      <DependentUpon>PageJeuM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score.xaml.cs">
+      <DependentUpon>Score.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TabDrapeau.cs" />
+    <Compile Include="Temps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="GeoDrapeau_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\flag\Afghanistan.png" />
+    <Content Include="Assets\flag\Afrique du Sud.png" />
+    <Content Include="Assets\flag\Albanie.png" />
+    <Content Include="Assets\flag\Algérie.png" />
+    <Content Include="Assets\flag\Allemagne.png" />
+    <Content Include="Assets\flag\Andorre.png" />
+    <Content Include="Assets\flag\Angola.png" />
+    <Content Include="Assets\flag\Antigua-et-Barbuda.png" />
+    <Content Include="Assets\flag\Arabe Sahraouie démocratique.png" />
+    <Content Include="Assets\flag\Arabie Saoudite.png" />
+    <Content Include="Assets\flag\Argentine.png" />
+    <Content Include="Assets\flag\Arménie.png" />
+    <Content Include="Assets\flag\Australie.png" />
+    <Content Include="Assets\flag\Autriche.png" />
+    <Content Include="Assets\flag\Azerbaïdjan.png" />
+    <Content Include="Assets\flag\Bahamas.png" />
+    <Content Include="Assets\flag\Bahreïn.png" />
+    <Content Include="Assets\flag\Bangladesh.png" />
+    <Content Include="Assets\flag\Barbade.png" />
+    <Content Include="Assets\flag\Belgique.png" />
+    <Content Include="Assets\flag\Belize.png" />
+    <Content Include="Assets\flag\Bhoutan.png" />
+    <Content Include="Assets\flag\Birmanie.png" />
+    <Content Include="Assets\flag\Biélorussie.png" />
+    <Content Include="Assets\flag\Bolivie.png" />
+    <Content Include="Assets\flag\Bosnie-Herzégovine.png" />
+    <Content Include="Assets\flag\Botswana.png" />
+    <Content Include="Assets\flag\Brunei.png" />
+    <Content Include="Assets\flag\Brésil.png" />
+    <Content Include="Assets\flag\Bulgarie.png" />
+    <Content Include="Assets\flag\Burkina Faso.png" />
+    <Content Include="Assets\flag\Burundi.png" />
+    <Content Include="Assets\flag\Bénin.png" />
+    <Content Include="Assets\flag\Cambodge.png" />
+    <Content Include="Assets\flag\Cameroun.png" />
+    <Content Include="Assets\flag\Canada.png" />
+    <Content Include="Assets\flag\Cap-Vert.png" />
+    <Content Include="Assets\flag\Centrafrique.png" />
+    <Content Include="Assets\flag\Chili.png" />
+    <Content Include="Assets\flag\Chine.png" />
+    <Content Include="Assets\flag\Chypre.png" />
+    <Content Include="Assets\flag\Colombie.png" />
+    <Content Include="Assets\flag\Comores.png" />
+    <Content Include="Assets\flag\Congo Démocratique.png" />
+    <Content Include="Assets\flag\Congo.png" />
+    <Content Include="Assets\flag\Corée du Nord.png" />
+    <Content Include="Assets\flag\Corée du Sud.png" />
+    <Content Include="Assets\flag\Costa Rica.png" />
+    <Content Include="Assets\flag\Croatie.png" />
+    <Content Include="Assets\flag\Cuba.png" />
+    <Content Include="Assets\flag\Côte d%27Ivoire.png" />
+    <Content Include="Assets\flag\Danemark.png" />
+    <Content Include="Assets\flag\Djibouti.png" />
+    <Content Include="Assets\flag\Dominique.png" />
+    <Content Include="Assets\flag\Egypte.png" />
+    <Content Include="Assets\flag\Emirats Arabe Unis.png" />
+    <Content Include="Assets\flag\Equateur.png" />
+    <Content Include="Assets\flag\Erythrée.png" />
+    <Content Include="Assets\flag\Espagne.png" />
+    <Content Include="Assets\flag\Estonie.png" />
+    <Content Include="Assets\flag\Etats-Unis.png" />
+    <Content Include="Assets\flag\Ethiopie.png" />
+    <Content Include="Assets\flag\Fidji.png" />
+    <Content Include="Assets\flag\Finlande.png" />
+    <Content Include="Assets\flag\France.png" />
+    <Content Include="Assets\flag\Gabon.png" />
+    <Content Include="Assets\flag\Gambie.png" />
+    <Content Include="Assets\flag\Ghana.png" />
+    <Content Include="Assets\flag\Grande Bretagne.png" />
+    <Content Include="Assets\flag\Grenade.png" />
+    <Content Include="Assets\flag\Grèce.png" />
+    <Content Include="Assets\flag\Guatemala.png" />
+    <Content Include="Assets\flag\Guinée Equatoriale.png" />
+    <Content Include="Assets\flag\Guinée-Bissau.png" />
+    <Content Include="Assets\flag\Guinée.png" />
+    <Content Include="Assets\flag\Guyana.png" />
+    <Content Include="Assets\flag\Géorgie.png" />
+    <Content Include="Assets\flag\Haïti.png" />
+    <Content Include="Assets\flag\Honduras.png" />
+    <Content Include="Assets\flag\Hongrie.png" />
+    <Content Include="Assets\flag\Iles Marshall.png" />
+    <Content Include="Assets\flag\Inde.png" />
+    <Content Include="Assets\flag\Indonésie.png" />
+    <Content Include="Assets\flag\Irak.png" />
+    <Content Include="Assets\flag\Iran.png" />
+    <Content Include="Assets\flag\Irelande.png" />
+    <Content Include="Assets\flag\Islande.png" />
+    <Content Include="Assets\flag\Israël.png" />
+    <Content Include="Assets\flag\Italie.png" />
+    <Content Include="Assets\flag\Jamaïque.png" />
+    <Content Include="Assets\flag\Japon.png" />
+    <Content Include="Assets\flag\Jordanie.png" />
+    <Content Include="Assets\flag\Kazakhstan.png" />
+    <Content Include="Assets\flag\Kenya.png" />
+    <Content Include="Assets\flag\Kirghizistan.png" />
+    <Content Include="Assets\flag\Kiribati.png" />
+    <Content Include="Assets\flag\Kosovo.png" />
+    <Content Include="Assets\flag\Koweït.png" />
+    <Content Include="Assets\flag\Laos.png" />
+    <Content Include="Assets\flag\Lesotho.png" />
+    <Content Include="Assets\flag\Lettonie.png" />
+    <Content Include="Assets\flag\Liban.png" />
+    <Content Include="Assets\flag\Libye.png" />
+    <Content Include="Assets\flag\Libéria.png" />
+    <Content Include="Assets\flag\Liechtenstein.png" />
+    <Content Include="Assets\flag\Lituanie.png" />
+    <Content Include="Assets\flag\Luxembourg.png" />
+    <Content Include="Assets\flag\Macédoine.png" />
+    <Content Include="Assets\flag\Madagascar.png" />
+    <Content Include="Assets\flag\Malaisie.png" />
+    <Content Include="Assets\flag\Malawi.png" />
+    <Content Include="Assets\flag\Maldives.png" />
+    <Content Include="Assets\flag\Mali.png" />
+    <Content Include="Assets\flag\Malte.png" />
+    <Content Include="Assets\flag\Maroc.png" />
+    <Content Include="Assets\flag\Maurice.png" />
+    <Content Include="Assets\flag\Mauritanie.png" />
+    <Content Include="Assets\flag\Mexique.png" />
+    <Content Include="Assets\flag\Micronésie.png" />
+    <Content Include="Assets\flag\Moldavie.png" />
+    <Content Include="Assets\flag\Monaco.png" />
+    <Content Include="Assets\flag\Mongolie.png" />
+    <Content Include="Assets\flag\Monténégro.png" />
+    <Content Include="Assets\flag\Mozambique.png" />
+    <Content Include="Assets\flag\Namibie.png" />
+    <Content Include="Assets\flag\Nauru.png" />
+    <Content Include="Assets\flag\Nicaragua.png" />
+    <Content Include="Assets\flag\Niger.png" />
+    <Content Include="Assets\flag\Nigeria.png" />
+    <Content Include="Assets\flag\Norvège.png" />
+    <Content Include="Assets\flag\Nouvelle-Zélande.png" />
+    <Content Include="Assets\flag\Népal.png" />
+    <Content Include="Assets\flag\Oman.png" />
+    <Content Include="Assets\flag\Ouganda.png" />
+    <Content Include="Assets\flag\Ouzbékistan.png" />
+    <Content Include="Assets\flag\Pakistan.png" />
+    <Content Include="Assets\flag\Palaos.png" />
+    <Content Include="Assets\flag\Panama.png" />
+    <Content Include="Assets\flag\Papouasie-Nouvelle-Guinée.png" />
+    <Content Include="Assets\flag\Paraguay.png" />
+    <Content Include="Assets\flag\Pays-Bas.png" />
+    <Content Include="Assets\flag\Philippines.png" />
+    <Content Include="Assets\flag\Pologne.png" />
+    <Content Include="Assets\flag\Portugal.png" />
+    <Content Include="Assets\flag\Pérou.png" />
+    <Content Include="Assets\flag\Qatar.png" />
+    <Content Include="Assets\flag\Roumanie.png" />
+    <Content Include="Assets\flag\Russie.png" />
+    <Content Include="Assets\flag\Rwanda.png" />
+    <Content Include="Assets\flag\République Dominicaine.png" />
+    <Content Include="Assets\flag\Saint Christophe et Niévès.png" />
+    <Content Include="Assets\flag\Saint Vincent et les Grenadines.png" />
+    <Content Include="Assets\flag\Saint-Marin.png" />
+    <Content Include="Assets\flag\Sainte Lucie.png" />
+    <Content Include="Assets\flag\Salomon.png" />
+    <Content Include="Assets\flag\Salvador.png" />
+    <Content Include="Assets\flag\Samao.png" />
+    <Content Include="Assets\flag\Sao Tomé-et-Principe.png" />
+    <Content Include="Assets\flag\Serbie.png" />
+    <Content Include="Assets\flag\Seychelles.png" />
+    <Content Include="Assets\flag\Sierra Leone.png" />
+    <Content Include="Assets\flag\Singapour.png" />
+    <Content Include="Assets\flag\Slovaquie.png" />
+    <Content Include="Assets\flag\Slovénie.png" />
+    <Content Include="Assets\flag\Somalie.png" />
+    <Content Include="Assets\flag\Soudan.png" />
+    <Content Include="Assets\flag\Sri Lanka.png" />
+    <Content Include="Assets\flag\Suisse.png" />
+    <Content Include="Assets\flag\Suriname.png" />
+    <Content Include="Assets\flag\Suède.png" />
+    <Content Include="Assets\flag\Swaziland.png" />
+    <Content Include="Assets\flag\Syrie.png" />
+    <Content Include="Assets\flag\Sénégal.png" />
+    <Content Include="Assets\flag\Tadjikistan.png" />
+    <Content Include="Assets\flag\Taiwan.png" />
+    <Content Include="Assets\flag\Tanzanie.png" />
+    <Content Include="Assets\flag\Tchad.png" />
+    <Content Include="Assets\flag\Tchécoslovaquie.png" />
+    <Content Include="Assets\flag\Thaïlande.png" />
+    <Content Include="Assets\flag\Timor Oriental.png" />
+    <Content Include="Assets\flag\Togo.png" />
+    <Content Include="Assets\flag\Tonga.png" />
+    <Content Include="Assets\flag\Trinité-et-Tobago.png" />
+    <Content Include="Assets\flag\Tunisie.png" />
+    <Content Include="Assets\flag\Turkménistan.png" />
+    <Content Include="Assets\flag\Turquie.png" />
+    <Content Include="Assets\flag\Tuvalu.png" />
+    <Content Include="Assets\flag\Ukraine.png" />
+    <Content Include="Assets\flag\Uruguay.png" />
+    <Content Include="Assets\flag\Vanuatu.png" />
+    <Content Include="Assets\flag\Vatican.png" />
+    <Content Include="Assets\flag\Venezuela.png" />
+    <Content Include="Assets\flag\Viêt Nam.png" />
+    <Content Include="Assets\flag\Yemen.png" />
+    <Content Include="Assets\flag\Zambie.png" />
+    <Content Include="Assets\flag\Zimbabwe.png" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="AjouterScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChoixMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PageJeuD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageJeuF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageJeuM.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Score.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.1.9</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

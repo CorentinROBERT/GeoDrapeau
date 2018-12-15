@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="GeoDrapeau.Score"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GeoDrapeau"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListView x:Name="listScore" HorizontalAlignment="Center" Height="776" Margin="0,190,0,0" VerticalAlignment="Top" Width="835" Background="#FFE6E6E6"/>
+        <TextBlock HorizontalAlignment="Left" Height="91" Margin="624,53,0,0" Text="SCORES" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="72"/>
+    </Grid>
+</Page>
