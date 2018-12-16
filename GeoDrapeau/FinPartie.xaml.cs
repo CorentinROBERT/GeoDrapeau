@@ -25,6 +25,7 @@ namespace GeoDrapeau
     public sealed partial class FinPartie : UserControl
     {
         Frame rootFrame = Window.Current.Content as Frame;
+        List<Joueur> tmp = new List<Joueur>();
         public FinPartie()
         {
             this.InitializeComponent();
@@ -33,7 +34,9 @@ namespace GeoDrapeau
 
         private void BtnAjouterScore_Click(object sender, RoutedEventArgs e)
         {
-
+            Joueur joueur = new Joueur(txtNom.Text, txtPrenom.Text, int.Parse(lblScore.Text));
+            Application.Current.Resources["joueur"] = joueur;
+            rootFrame.Navigate(typeof(Score));
         }
 
         private void BtnIgnorer_Click(object sender, RoutedEventArgs e)

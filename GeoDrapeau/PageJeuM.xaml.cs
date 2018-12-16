@@ -122,12 +122,17 @@ namespace GeoDrapeau
 
             btnPause.IsEnabled = true;
             btnLecture.IsEnabled = false;
+
+            menuApparait(false);
         }
         public void jouer()
         {
 
             if (temps.EstFini)
             {
+                temps.stop();
+                timer.Stop();
+
                 btn.IsEnabled = false;
                 btn1.IsEnabled = false;
                 btn2.IsEnabled = false;

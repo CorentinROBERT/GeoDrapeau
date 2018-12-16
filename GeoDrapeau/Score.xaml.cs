@@ -29,27 +29,22 @@ namespace GeoDrapeau
             this.InitializeComponent();
             
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigated += OnRetour;            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
-            
+            rootFrame.Navigated += OnRetour;            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;            
             listScore.DataContext = tmp;
-            /*
-            tmp.Add(new Joueur("Robert", "Corentin", 20, "corentin.robert@gmail.com"));
-            tmp.Add(new Joueur("LAMAUVE", "Adèle", 40, "corentin.robert@gmail.com"));
-            tmp.Add(new Joueur("Robert", "Pascal", 35, "corentin.robert@gmail.com"));
-            */
             tmp.Sort();
 
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            if (Application.Current.Resources.ContainsKey("listScore"))
+            if (Application.Current.Resources.ContainsKey("joueur"))
             {
-                tmp = (List<Joueur>)Application.Current.Resources["listScore"];
+                Joueur joueur = (Joueur)Application.Current.Resources["joueur"];
+                tmp.Add(joueur);
                 tmp.Sort();
+                Application.Current.Resources.Remove("joueur");
             }
-            Application.Current.Resources.Remove("listScore");
-            Application.Current.Resources["listScore"] = tmp;
+           
         }
         void OnRetour(Object sender, NavigationEventArgs e)
         {

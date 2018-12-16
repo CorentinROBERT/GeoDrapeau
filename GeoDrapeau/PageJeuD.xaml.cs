@@ -114,6 +114,7 @@ namespace GeoDrapeau
         }
         public void lecture()
         {
+
             temps.start();
             timer.Start();
 
@@ -135,6 +136,9 @@ namespace GeoDrapeau
 
             if (temps.EstFini)
             {
+                temps.stop();
+                timer.Stop();
+
                 btn.IsEnabled = false;
                 btn1.IsEnabled = false;
                 btn2.IsEnabled = false;
