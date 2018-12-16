@@ -102,9 +102,6 @@
       <DependentUpon>ChoixMode.xaml</DependentUpon>
     </Compile>
     <Compile Include="Drapeau.cs" />
-    <Compile Include="EnvoieMail.xaml.cs">
-      <DependentUpon>EnvoieMail.xaml</DependentUpon>
-    </Compile>
     <Compile Include="FinPartie.xaml.cs">
       <DependentUpon>FinPartie.xaml</DependentUpon>
     </Compile>
@@ -368,10 +365,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChoixMode.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EnvoieMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

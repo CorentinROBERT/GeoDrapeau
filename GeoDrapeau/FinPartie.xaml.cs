@@ -5,8 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Contacts;
+using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -24,8 +27,8 @@ namespace GeoDrapeau
         Frame rootFrame = Window.Current.Content as Frame;
         public FinPartie()
         {
-            this.InitializeComponent();   
-            
+            this.InitializeComponent();
+            rootFrame = Window.Current.Content as Frame;
         }
 
         private void BtnAjouterScore_Click(object sender, RoutedEventArgs e)
@@ -38,17 +41,21 @@ namespace GeoDrapeau
             rootFrame.Navigate(typeof(MainPage));
         }
 
-        private void BtnShareMail_Click(object sender, RoutedEventArgs e)
+        private async void BtnShareMail_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-            Application.Current.Resources["nom"] = txtNom.Text;
-            Application.Current.Resources["prenom"] = txtPrenom.Text;
-            Application.Current.Resources["score"] = lblScore.Text;
+            string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";
+            ContactPicker contactPicker = new ContactPicker();
+            Contact contact = await contactPicker.PickContactAsync();
+            ContactStore contactStore = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AllContactsReadOnly);
 
-            rootFrame.Navigate(typeof(EnvoieMail));
+            Contact real = await contactStore.GetContactAsync(contact.Id);
             
+            EmailMessage emailMessage = new EmailMessage();
+            emailMessage.To.Add(new EmailRecipient(real.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>().Address));
+            emailMessage.Subject = "GeoDrapeau Score" + ApplicationView.GetForCurrentView().Title.ToString().Trim();
+            emailMessage.Body = message;
 
+            await EmailManager.ShowComposeNewEmailAsync(emailMessage);
         }
         public void setScore(string score)
         {
