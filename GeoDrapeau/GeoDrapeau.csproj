@@ -102,8 +102,8 @@
       <DependentUpon>ChoixMode.xaml</DependentUpon>
     </Compile>
     <Compile Include="Drapeau.cs" />
-    <Compile Include="FinPartiexaml.xaml.cs">
-      <DependentUpon>FinPartiexaml.xaml</DependentUpon>
+    <Compile Include="FinPartie.xaml.cs">
+      <DependentUpon>FinPartie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Joueur.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -368,7 +368,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FinPartiexaml.xaml">
+    <Page Include="FinPartie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

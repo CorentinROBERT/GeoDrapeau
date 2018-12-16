@@ -10,23 +10,20 @@ namespace GeoDrapeau
     {
         private string nom,prenom;
         private int score;
-        private string mail;
 
         public string Nom { get => nom; set => nom = value; }
         public string Prenom { get => prenom; set => prenom = value; }
         public int Score { get => score; set => score = value; }
-        public string Mail { get => mail; set => mail = value; }
 
-        public Joueur(string nom,string prenom,int score,string mail)
+        public Joueur(string nom,string prenom,int score)
         {
             Nom = nom;
             Prenom = prenom;
             Score = score;
-            Mail = mail;
         }
         public override string ToString()
         {
-            return "Nom : "+Nom+" Prénom : "+Prenom+" Score : "+Score+" Mail : "+Mail;
+            return "Nom : " + Nom + " Prénom : " + Prenom + " Score : " + Score;
         }
 
         public int CompareTo(object obj)
@@ -39,7 +36,7 @@ namespace GeoDrapeau
 
         public string joueurString
         {
-            get { return Nom + " | " + Prenom + " |  Score : " + Score + " | "+Mail; }
+            get { return Nom + " | " + Prenom + " |  Score : " + Score; }
 
         }
     }
