@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <ListView x:Name="listScore" HorizontalAlignment="Center" Height="776" Margin="0,190,0,0" VerticalAlignment="Top" Width="835" ItemsSource="{Binding}" DisplayMemberPath="joueurString" Background="#FFE6E6E6"/>
-        <TextBlock HorizontalAlignment="Left" Height="91" Margin="624,53,0,0" Text="SCORES" TextWrapping="Wrap" VerticalAlignment="Top" Width="261" FontSize="72"/>
+        <ListView x:Name="listScore" HorizontalAlignment="Center" Height="726" Margin="0,196,0,0" VerticalAlignment="Top" Width="835" ItemsSource="{Binding}" DisplayMemberPath="joueurString" Background="#FFE6E6E6"/>
+        <TextBlock Height="91" Margin="624,46,615,863" Text="SCORES" TextWrapping="Wrap" Width="261" FontSize="72"/>
     </Grid>
 </Page>
