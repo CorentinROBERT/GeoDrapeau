@@ -39,6 +39,7 @@ namespace GeoDrapeau
             if (TempsDepart > 0)
             {
                 TempsDepart -= 1;
+                Debug.WriteLine(TempsDepart);
             }
             else
             {

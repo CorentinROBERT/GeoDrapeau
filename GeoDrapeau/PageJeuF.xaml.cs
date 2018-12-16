@@ -59,6 +59,7 @@ namespace GeoDrapeau
 
             timer.Interval = new System.TimeSpan(0, 0, 1);
             timer.Tick += maj;
+
             timer.Start();
 
             btnLecture.IsEnabled = false;
@@ -68,6 +69,7 @@ namespace GeoDrapeau
 
         public void maj(object sender, object e)
         {
+            Debug.WriteLine(temps.TempsDepart.ToString());
             if(temps.TempsDepart == 0)
             {
                 timer.Stop();
@@ -131,7 +133,6 @@ namespace GeoDrapeau
             {
                 temps.stop();
                 timer.Stop();
-
 
                 btn.IsEnabled = false;
                 btn1.IsEnabled = false;

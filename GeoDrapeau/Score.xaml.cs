@@ -27,13 +27,14 @@ namespace GeoDrapeau
         public Score()
         {
             this.InitializeComponent();
-            
+
             Frame rootFrame = Window.Current.Content as Frame;
-            rootFrame.Navigated += OnRetour;            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;            
+
             listScore.DataContext = tmp;
             tmp.Sort();
 
         }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -44,29 +45,13 @@ namespace GeoDrapeau
                 tmp.Sort();
                 Application.Current.Resources.Remove("joueur");
             }
-           
+
         }
-        void OnRetour(Object sender, NavigationEventArgs e)
-        {
-            if (((Frame)sender).CanGoBack)
-            {
-                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility
-                = AppViewBackButtonVisibility.Visible;
-            }
-            else
-            {
-                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility
-                = AppViewBackButtonVisibility.Collapsed;
-            }
-        }
-        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-            if (rootFrame.CanGoBack)
-            {
-                e.Handled = true;
-                Frame.Navigate(typeof(MainPage));
-            }
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }
