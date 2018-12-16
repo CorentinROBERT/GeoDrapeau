@@ -12,14 +12,14 @@
     <Grid>
         <Rectangle HorizontalAlignment="Center" Height="300" Margin="0,0,0,0" VerticalAlignment="Center" Width="400" Stroke="#FF919191" Fill="White"/>
         <TextBlock Height="55" Margin="0,0,0,0" Text="Fin de partie" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" TextAlignment="Center" FocusVisualPrimaryBrush="{x:Null}"/>
-        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="41" Margin="162,66,0,0" Text="TextBox" VerticalAlignment="Top" Width="206" FontSize="18" GotFocus="TxtNom_GotFocus"/>
-        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="41" Margin="162,108,0,0" Text="TextBox" VerticalAlignment="Top" Width="206" FontSize="18" GotFocus="TxtPrenom_GotFocus"/>
+        <TextBox x:Name="txtNom" HorizontalAlignment="Left" Height="41" Margin="162,66,0,0" Text="" VerticalAlignment="Top" Width="206" FontSize="18" GotFocus="TxtNom_GotFocus"/>
+        <TextBox x:Name="txtPrenom" HorizontalAlignment="Left" Height="41" Margin="162,108,0,0" Text="" VerticalAlignment="Top" Width="206" FontSize="18" GotFocus="TxtPrenom_GotFocus"/>
         <TextBlock HorizontalAlignment="Left" Height="41" Margin="48,66,0,0" Text="Nom :" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" FontSize="22"/>
         <TextBlock HorizontalAlignment="Left" Height="41" Margin="48,111,0,0" Text="Prénom : " TextWrapping="Wrap" VerticalAlignment="Top" Width="115" FontSize="22"/>
         <TextBlock HorizontalAlignment="Left" Height="46" Margin="48,155,0,0" Text="Score : " TextWrapping="Wrap" VerticalAlignment="Top" Width="82" FontSize="22"/>
         <TextBlock x:Name="lblScore" HorizontalAlignment="Left" Height="25" Margin="162,161,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" FontSize="18" TextAlignment="Left"/>
         <Button x:Name="btnAjouterScore" Content="Ajouter score" HorizontalAlignment="Left" Height="39" Margin="40,250,0,0" VerticalAlignment="Top" Width="117" Click="BtnAjouterScore_Click"/>
-        <Button x:Name="btnShareMail" Content="Partager par mail" HorizontalAlignment="Center" Height="33" Margin="0,204,0,0" VerticalAlignment="Top" Width="169" Click="BtnShareMail_Click"/>
+        <Button x:Name="btnShareMail" Content="Partager par mail" HorizontalAlignment="Left" Height="33" Margin="120,204,0,0" VerticalAlignment="Top" Width="169" Click="BtnShareMail_Click"/>
         <Button x:Name="btnIgnorer" Content="Ignorer" HorizontalAlignment="Left" Height="39" Margin="255,250,0,0" VerticalAlignment="Top" Width="113" Click="BtnIgnorer_Click"/>
 
     </Grid>

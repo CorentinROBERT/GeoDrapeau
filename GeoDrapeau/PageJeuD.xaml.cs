@@ -57,6 +57,7 @@ namespace GeoDrapeau
             temps.TempsDepart = TEMPS_DEPART;
             temps.start();
 
+            ucFinPartie.Visibility = Visibility.Collapsed;
             menuApparait(false);
 
             timer.Interval = new System.TimeSpan(0, 0, 1);
@@ -125,7 +126,6 @@ namespace GeoDrapeau
             btn6.IsEnabled = true;
             btn7.IsEnabled = true;
 
-            menuApparait(true);
 
             btnPause.IsEnabled = true;
             btnLecture.IsEnabled = false;
@@ -146,7 +146,8 @@ namespace GeoDrapeau
 
                 btnPause.IsEnabled = false;
 
-                menuApparait(true);
+                ucFinPartie.Visibility = Visibility.Visible;
+                ucFinPartie.setScore(lblScore.Text);
             }
             else
             {

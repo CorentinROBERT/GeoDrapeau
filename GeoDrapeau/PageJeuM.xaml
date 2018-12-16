@@ -42,5 +42,6 @@
         <Rectangle x:Name="rect" Margin="-1,48,1,0" Fill="#FF7C7C7C"/>
         <Button x:Name="btnRecommencer" Content="Recommencer" HorizontalAlignment="Stretch" Height="151" Margin="419,239,418,0" VerticalAlignment="Top" FontSize="48" Click="BtnRecommencer_Click"/>
         <Button x:Name="btnMenuPrincipal" Content="Menu principal" HorizontalAlignment="Stretch" Height="151" Margin="419,584,418,0" VerticalAlignment="Top" FontSize="48" Click="Button_Click"/>
+        <local:FinPartie x:Name="ucFinPartie" HorizontalAlignment="Center" Height="294" Margin="0,0,0,0" VerticalAlignment="Center" Width="383"/>
     </Grid>
 </Page>
