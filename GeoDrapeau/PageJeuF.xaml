@@ -32,10 +32,10 @@
                     <GradientStop Color="#7F7A7979" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <Button x:Name="btn" Content="Button" HorizontalAlignment="Stretch" Margin="24,0,1186,0" VerticalAlignment="Center" FontSize="36" Width="290" Height="68"/>
-            <Button x:Name="btn1" Content="Button" HorizontalAlignment="Stretch" Margin="399,49,811,49" VerticalAlignment="Stretch" Width="290" FontSize="36"/>
-            <Button x:Name="btn2" Content="Button" HorizontalAlignment="Stretch" Margin="796,49,414,49" VerticalAlignment="Stretch" Width="290" FontSize="36"/>
-            <Button x:Name="btn3" Content="Button" HorizontalAlignment="Stretch" Margin="1185,49,25,49" VerticalAlignment="Stretch" FontSize="36" Width="290"/>
+            <Button x:Name="btn" Content="Button" HorizontalAlignment="Stretch" Margin="24,0,1186,0" VerticalAlignment="Center" Width="290" FontSize="36" Height="70"/>
+            <Button x:Name="btn1" Content="Button" HorizontalAlignment="Stretch" Margin="399,49,811,49" VerticalAlignment="Center" Width="290" FontSize="36" Height="70"/>
+            <Button x:Name="btn2" Content="Button" HorizontalAlignment="Stretch" Margin="796,49,414,49" VerticalAlignment="Center" Width="290" FontSize="36" Height="70"/>
+            <Button x:Name="btn3" Content="Button" HorizontalAlignment="Stretch" Margin="1185,49,25,49" VerticalAlignment="Center"  Width="290" FontSize="36" Height="70"/>
         </Grid>
         <Rectangle x:Name="rect" Margin="1,42,-1,6" Fill="#FF7C7C7C"/>
         <Button x:Name="btnRecommencer" Content="Recommencer" HorizontalAlignment="Stretch" Height="151" Margin="419,239,418,0" VerticalAlignment="Top" FontSize="48" Click="BtnRecommencer_Click"/>
