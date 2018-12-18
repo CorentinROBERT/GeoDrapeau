@@ -9,6 +9,7 @@ using Windows.ApplicationModel.Contacts;
 using Windows.ApplicationModel.Email;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -34,9 +35,16 @@ namespace GeoDrapeau
 
         private void BtnAjouterScore_Click(object sender, RoutedEventArgs e)
         {
-            Joueur joueur = new Joueur(txtNom.Text, txtPrenom.Text, int.Parse(lblScore.Text));
-            Application.Current.Resources["joueur"] = joueur;
-            rootFrame.Navigate(typeof(Score));
+            if (txtNom.Text !="" || txtPrenom.Text !="")
+            {
+                Joueur joueur = new Joueur(txtNom.Text, txtPrenom.Text, int.Parse(lblScore.Text));
+                Application.Current.Resources["joueur"] = joueur;
+                rootFrame.Navigate(typeof(Score));
+            }
+            else
+            {
+                message();
+            }
         }
 
         private void BtnIgnorer_Click(object sender, RoutedEventArgs e)
@@ -46,22 +54,28 @@ namespace GeoDrapeau
 
         private async void BtnShareMail_Click(object sender, RoutedEventArgs e)
         {
-            string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";
-            ContactPicker contactPicker = new ContactPicker();
-            Contact contact = await contactPicker.PickContactAsync();
-            ContactStore contactStore = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AllContactsReadOnly);
-            if(contact != null)
+            if (txtNom.Text != "" || txtPrenom.Text != "")
             {
-                Contact real = await contactStore.GetContactAsync(contact.Id);
+                string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";
+                ContactPicker contactPicker = new ContactPicker();
+                Contact contact = await contactPicker.PickContactAsync();
+                ContactStore contactStore = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AllContactsReadOnly);
+                if (contact != null)
+                {
+                    Contact real = await contactStore.GetContactAsync(contact.Id);
 
-                EmailMessage emailMessage = new EmailMessage();
-                emailMessage.To.Add(new EmailRecipient(real.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>().Address));
-                emailMessage.Subject = "GeoDrapeau Score" + ApplicationView.GetForCurrentView().Title.ToString().Trim();
-                emailMessage.Body = message;
+                    EmailMessage emailMessage = new EmailMessage();
+                    emailMessage.To.Add(new EmailRecipient(real.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>().Address));
+                    emailMessage.Subject = "GeoDrapeau Score" + ApplicationView.GetForCurrentView().Title.ToString().Trim();
+                    emailMessage.Body = message;
 
-                await EmailManager.ShowComposeNewEmailAsync(emailMessage);
+                    await EmailManager.ShowComposeNewEmailAsync(emailMessage);
+                }
             }
-            
+            else
+            {
+                message();
+            }
         }
         public void setScore(string score)
         {
@@ -77,20 +91,11 @@ namespace GeoDrapeau
         {
             txtNom.Text = "";
         }
-        private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,string subject, string messageBody)
+        //Message modale qui informe l'utilisateur qu'il doit compléter les champs
+        public async void message()
         {
-            var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
-            emailMessage.Body = messageBody;
-
-            var email = recipient.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>();
-            if (email != null)
-            {
-                var emailRecipient = new Windows.ApplicationModel.Email.EmailRecipient(email.Address);
-                emailMessage.To.Add(emailRecipient);
-                emailMessage.Subject = subject;
-            }
-
-            await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
+            var dialog = new MessageDialog("Un des deux champs obligatoires n'est pas rempli");
+            await dialog.ShowAsync();
         }
     }
 }
