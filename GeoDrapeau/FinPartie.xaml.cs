@@ -56,18 +56,6 @@ namespace GeoDrapeau
 
         private async void BtnShareMail_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-            string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points au niveau. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";
-            ContactPicker contactPicker = new ContactPicker();
-            Contact contact = await contactPicker.PickContactAsync();
-            ContactStore contactStore = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AllContactsReadOnly);
-=======
-            Regex myRegex = new Regex("^[0-9]$");
-            if (myRegex.IsMatch(txtNom.Text) || myRegex.IsMatch(txtPrenom.Text))
-            {
-                Debug.WriteLine("Pas de chiffres ou nombres");
-                throw new Exception("\nNe peut contenir des Nombres\n");
-            }
 
             if (txtNom.Text != "" || txtPrenom.Text != "")
             {
@@ -78,7 +66,6 @@ namespace GeoDrapeau
                 if (contact != null)
                 {
                     Contact real = await contactStore.GetContactAsync(contact.Id);
->>>>>>> 2d6e4962c8dc883de375af27dfcf32ad65a5b73c
 
                     EmailMessage emailMessage = new EmailMessage();
                     emailMessage.To.Add(new EmailRecipient(real.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>().Address));

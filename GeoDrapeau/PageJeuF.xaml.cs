@@ -51,10 +51,7 @@ namespace GeoDrapeau
             btn3.Click += btnClick;
             
             temps.TempsDepart = TEMPS_DEPART;
-            temps.Tick += updateLabel;
             temps.start();
-            
-
 
             ucFinPartie.Visibility = Visibility.Collapsed;
             menuApparait(false);
@@ -71,14 +68,6 @@ namespace GeoDrapeau
         }
         public void maj(object sender, object e)
         {
-<<<<<<< HEAD
-=======
-            if(temps.TempsDepart == 0)
-            {
-                timer.Stop();
-                btnPause.IsEnabled = false;
-            }
->>>>>>> 2d6e4962c8dc883de375af27dfcf32ad65a5b73c
             lblTImer.Text = temps.TempsDepart.ToString();
         }
         public void setImage(string imagePath)
