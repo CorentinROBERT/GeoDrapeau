@@ -50,15 +50,18 @@ namespace GeoDrapeau
             ContactPicker contactPicker = new ContactPicker();
             Contact contact = await contactPicker.PickContactAsync();
             ContactStore contactStore = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AllContactsReadOnly);
+            if(contact != null)
+            {
+                Contact real = await contactStore.GetContactAsync(contact.Id);
 
-            Contact real = await contactStore.GetContactAsync(contact.Id);
+                EmailMessage emailMessage = new EmailMessage();
+                emailMessage.To.Add(new EmailRecipient(real.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>().Address));
+                emailMessage.Subject = "GeoDrapeau Score" + ApplicationView.GetForCurrentView().Title.ToString().Trim();
+                emailMessage.Body = message;
+
+                await EmailManager.ShowComposeNewEmailAsync(emailMessage);
+            }
             
-            EmailMessage emailMessage = new EmailMessage();
-            emailMessage.To.Add(new EmailRecipient(real.Emails.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactEmail>().Address));
-            emailMessage.Subject = "GeoDrapeau Score" + ApplicationView.GetForCurrentView().Title.ToString().Trim();
-            emailMessage.Body = message;
-
-            await EmailManager.ShowComposeNewEmailAsync(emailMessage);
         }
         public void setScore(string score)
         {

@@ -77,6 +77,7 @@ namespace GeoDrapeau
         }
         public void setImage(string imagePath)
         {
+            animImage.Begin();
             imgDrapeau.Source = new BitmapImage(new Uri("ms-appx:///" + imagePath));
         }
         void OnRetour(Object sender, NavigationEventArgs e)
@@ -100,6 +101,7 @@ namespace GeoDrapeau
             btn5.IsEnabled = false;
 
             menuApparait(true);
+            temps.EstFini = false;
 
             btnPause.IsEnabled = false;
             btnLecture.IsEnabled = true;
@@ -142,6 +144,8 @@ namespace GeoDrapeau
 
                 ucFinPartie.Visibility = Visibility.Visible;
                 ucFinPartie.setScore(lblScore.Text);
+
+
             }
             else
             {

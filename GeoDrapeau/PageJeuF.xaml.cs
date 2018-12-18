@@ -69,7 +69,6 @@ namespace GeoDrapeau
 
         public void maj(object sender, object e)
         {
-            Debug.WriteLine(temps.TempsDepart.ToString());
             if(temps.TempsDepart == 0)
             {
                 timer.Stop();
@@ -79,6 +78,7 @@ namespace GeoDrapeau
         }
         public void setImage(string imagePath)
         {
+            animImage.Begin();
             imgDrapeau.Source = new BitmapImage(new Uri("ms-appx:///" + imagePath));
         }
         void OnRetour(Object sender, NavigationEventArgs e)
@@ -95,7 +95,6 @@ namespace GeoDrapeau
             timer.Stop();
 
             menuApparait(true);
-
 
             btn.IsEnabled = false;
             btn1.IsEnabled = false;
@@ -140,6 +139,7 @@ namespace GeoDrapeau
                 btn3.IsEnabled = false;
 
                 btnPause.IsEnabled = false;
+                temps.EstFini = false;
 
                 ucFinPartie.setScore(lblScore.Text.ToString());
                 ucFinPartie.Visibility = Visibility.Visible;
@@ -159,6 +159,7 @@ namespace GeoDrapeau
                 facile.Remove(drap3);
 
                 List<Drapeau> tmp = new List<Drapeau>();
+
                 tmp.Add(drapeauSoluce);
                 tmp.Add(drap1);
                 tmp.Add(drap2);
@@ -197,7 +198,6 @@ namespace GeoDrapeau
 
         private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
         {
-
             menuApparait(false);
 
             temps.EstFini = false;
@@ -213,6 +213,7 @@ namespace GeoDrapeau
         {
             Frame.Navigate(typeof(MainPage));
         }
+
         public void menuApparait(Boolean choix)
         {
             if(choix)
