@@ -51,7 +51,10 @@ namespace GeoDrapeau
             btn3.Click += btnClick;
             
             temps.TempsDepart = TEMPS_DEPART;
+            temps.Tick += updateLabel;
             temps.start();
+            
+
 
             ucFinPartie.Visibility = Visibility.Collapsed;
             menuApparait(false);
@@ -62,13 +65,25 @@ namespace GeoDrapeau
 
             jouer();
         }
-
+        public void updateLabel(object sender, EventArgs e)
+        {
+            lblTImer.Text = temps.TempsDepart.ToString();
+        }
         public void maj(object sender, object e)
         {
+<<<<<<< HEAD
+=======
+            if(temps.TempsDepart == 0)
+            {
+                timer.Stop();
+                btnPause.IsEnabled = false;
+            }
+>>>>>>> 2d6e4962c8dc883de375af27dfcf32ad65a5b73c
             lblTImer.Text = temps.TempsDepart.ToString();
         }
         public void setImage(string imagePath)
         {
+            animImage.Begin();
             imgDrapeau.Source = new BitmapImage(new Uri("ms-appx:///" + imagePath));
         }
         void OnRetour(Object sender, NavigationEventArgs e)
@@ -84,7 +99,6 @@ namespace GeoDrapeau
             temps.stop();
 
             menuApparait(true);
-
 
             btn.IsEnabled = false;
             btn1.IsEnabled = false;
@@ -127,6 +141,7 @@ namespace GeoDrapeau
                 btn3.IsEnabled = false;
 
                 btnPause.IsEnabled = false;
+                temps.EstFini = false;
 
                 ucFinPartie.setScore(lblScore.Text.ToString());
                 ucFinPartie.Visibility = Visibility.Visible;
@@ -146,6 +161,7 @@ namespace GeoDrapeau
                 facile.Remove(drap3);
 
                 List<Drapeau> tmp = new List<Drapeau>();
+
                 tmp.Add(drapeauSoluce);
                 tmp.Add(drap1);
                 tmp.Add(drap2);
@@ -184,7 +200,6 @@ namespace GeoDrapeau
 
         private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
         {
-
             menuApparait(false);
 
             temps.EstFini = false;
@@ -200,6 +215,7 @@ namespace GeoDrapeau
         {
             Frame.Navigate(typeof(MainPage));
         }
+
         public void menuApparait(Boolean choix)
         {
             if(choix)

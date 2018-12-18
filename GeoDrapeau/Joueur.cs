@@ -21,6 +21,7 @@ namespace GeoDrapeau
             Prenom = prenom;
             Score = score;
         }
+
         public override string ToString()
         {
             return "Nom : " + Nom + " Prénom : " + Prenom + " Score : " + Score;
