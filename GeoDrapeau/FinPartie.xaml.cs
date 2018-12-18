@@ -26,6 +26,7 @@ namespace GeoDrapeau
     {
         Frame rootFrame = Window.Current.Content as Frame;
         List<Joueur> tmp = new List<Joueur>();
+        int niveau;
         public FinPartie()
         {
             this.InitializeComponent();
@@ -46,7 +47,7 @@ namespace GeoDrapeau
 
         private async void BtnShareMail_Click(object sender, RoutedEventArgs e)
         {
-            string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";
+            string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points au niveau. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";
             ContactPicker contactPicker = new ContactPicker();
             Contact contact = await contactPicker.PickContactAsync();
             ContactStore contactStore = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AllContactsReadOnly);

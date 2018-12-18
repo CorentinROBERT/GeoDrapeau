@@ -32,7 +32,6 @@ namespace GeoDrapeau
         Drapeau drapeauSoluce = new Drapeau("",0,"");
         Random aleatoire = new Random();
         Temps temps = new Temps();
-        DispatcherTimer timer = new DispatcherTimer();
         public PageJeuF()
         {
             this.InitializeComponent();
@@ -57,10 +56,7 @@ namespace GeoDrapeau
             ucFinPartie.Visibility = Visibility.Collapsed;
             menuApparait(false);
 
-            timer.Interval = new System.TimeSpan(0, 0, 1);
-            timer.Tick += maj;
-
-            timer.Start();
+            Temps.timer.Tick += maj;
 
             btnLecture.IsEnabled = false;
 
@@ -69,12 +65,6 @@ namespace GeoDrapeau
 
         public void maj(object sender, object e)
         {
-            Debug.WriteLine(temps.TempsDepart.ToString());
-            if(temps.TempsDepart == 0)
-            {
-                timer.Stop();
-                btnPause.IsEnabled = false;
-            }
             lblTImer.Text = temps.TempsDepart.ToString();
         }
         public void setImage(string imagePath)
@@ -92,7 +82,6 @@ namespace GeoDrapeau
         private void OnPause_Click(object sender, RoutedEventArgs e)
         {
             temps.stop();
-            timer.Stop();
 
             menuApparait(true);
 
@@ -113,7 +102,6 @@ namespace GeoDrapeau
         public void lecture()
         {
             temps.start();
-            timer.Start();
 
             btn.IsEnabled = true;
             btn1.IsEnabled = true;
@@ -132,7 +120,6 @@ namespace GeoDrapeau
             if (temps.EstFini)
             {
                 temps.stop();
-                timer.Stop();
 
                 btn.IsEnabled = false;
                 btn1.IsEnabled = false;
