@@ -24,7 +24,7 @@ namespace GeoDrapeau
         {
             timer = new DispatcherTimer();
             timer.Interval = new System.TimeSpan(0,0,1);
-            timer.Tick += Tick;
+            timer.Tick += Tick0;
         }
         public void start()
         {
@@ -34,7 +34,7 @@ namespace GeoDrapeau
         {
             timer.Stop();
         }
-        public void Tick(object sender, object e)
+        public void Tick0(object sender, object e)
         {
             if (TempsDepart > 0)
             {

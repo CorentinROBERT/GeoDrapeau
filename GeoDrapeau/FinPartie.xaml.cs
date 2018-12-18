@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Contacts;
 using Windows.ApplicationModel.Email;
@@ -54,6 +55,13 @@ namespace GeoDrapeau
 
         private async void BtnShareMail_Click(object sender, RoutedEventArgs e)
         {
+            Regex myRegex = new Regex("^[0-9]$");
+            if (myRegex.IsMatch(txtNom.Text) || myRegex.IsMatch(txtPrenom.Text))
+            {
+                Debug.WriteLine("Pas de chiffres ou nombres");
+                throw new Exception("\nNe peut contenir des Nombres\n");
+            }
+
             if (txtNom.Text != "" || txtPrenom.Text != "")
             {
                 string message = "Bonjour, " + txtNom.Text + " " + txtPrenom.Text + " vous informe de sa participation à GeoDrapeau et que son score est de " + lblScore.Text + " points. \nSi vous pensez faire mieux, venez relever le défi.\n\nL'équipe de GeoDrapeau vous remercie.";

@@ -52,7 +52,10 @@ namespace GeoDrapeau
             btn3.Click += btnClick;
             
             temps.TempsDepart = TEMPS_DEPART;
+            temps.Tick += updateLabel;
             temps.start();
+            
+
 
             ucFinPartie.Visibility = Visibility.Collapsed;
             menuApparait(false);
@@ -66,7 +69,10 @@ namespace GeoDrapeau
 
             jouer();
         }
-
+        public void updateLabel(object sender, EventArgs e)
+        {
+            lblTImer.Text = temps.TempsDepart.ToString();
+        }
         public void maj(object sender, object e)
         {
             if(temps.TempsDepart == 0)
