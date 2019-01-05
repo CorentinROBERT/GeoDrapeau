@@ -26,7 +26,7 @@ namespace GeoDrapeau
     public sealed partial class PageJeuF : Page
     {
         int score = 0;
-        const int TEMPS_DEPART = 20;
+        const int TEMPS_DEPART = 90;
         TabDrapeau tabDrapeaux = new TabDrapeau();
         TabDrapeau facile = new TabDrapeau();
         Drapeau drapeauSoluce = new Drapeau("",0,"");
@@ -139,9 +139,7 @@ namespace GeoDrapeau
                 btn3.IsEnabled = false;
 
                 btnPause.IsEnabled = false;
-                temps.EstFini = false;
-
-                
+                temps.EstFini = false;               
 
                 ucFinPartie.setScore(lblScore.Text.ToString());
                 ucFinPartie.Visibility = Visibility.Visible;
