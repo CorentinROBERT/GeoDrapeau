@@ -24,7 +24,7 @@ namespace GeoDrapeau
     /// </summary>
     public sealed partial class PageJeuM : Page
     {
-        const int TEMPS_DEPART = 20;
+        const int TEMPS_DEPART = 90;
         int score = 0;
         TabDrapeau tabDrapeaux = new TabDrapeau();
         TabDrapeau moyen = new TabDrapeau();
