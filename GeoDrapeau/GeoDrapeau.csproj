@@ -105,6 +105,9 @@
     <Compile Include="ChoixMode.xaml.cs">
       <DependentUpon>ChoixMode.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Correction.xaml.cs">
+      <DependentUpon>Correction.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Drapeau.cs" />
     <Compile Include="FinPartie.xaml.cs">
       <DependentUpon>FinPartie.xaml</DependentUpon>
@@ -348,6 +351,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="ChoixMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Correction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

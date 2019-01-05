@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="GeoDrapeau.Correction"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GeoDrapeau"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid Background="White" Margin="0,0,0,10">
+        <ListView x:Name="listCorrection" Margin="0,61,0,0" Background="#FFAEAEAE" RenderTransformOrigin="0.5,0.5" FontSize="24" HorizontalAlignment="Left" SelectionChanged="ListCorrection_SelectionChanged" Width="283">
+            <ListView.RenderTransform>
+                <CompositeTransform SkewY="0" TranslateY="0"/>
+            </ListView.RenderTransform>
+        </ListView>
+        <TextBlock Height="34" Margin="83,0,49,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" HorizontalAlignment="Stretch"><Run Text="Réponses"/><Run Text=" "/><Run Text=":"/><Run Text=" "/><Run Text="Correction"/></TextBlock>
+        <Image x:Name="imgCorrige" HorizontalAlignment="Left" Height="100" Margin="290,61,0,0" VerticalAlignment="Top" Width="100" FocusVisualPrimaryBrush="Black" FocusVisualSecondaryBrush="Black"/>
+        <TextBlock Margin="0,36,0,0" Text="Cliquez sur une ligne pour voir le drapeau de correction" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#7F000000" HorizontalAlignment="Center" Width="400"/>
+
+    </Grid>
+</UserControl>

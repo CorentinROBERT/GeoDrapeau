@@ -32,6 +32,10 @@ namespace GeoDrapeau
         Drapeau drapeauSoluce = new Drapeau("",0,"");
         Random aleatoire = new Random();
         Temps temps = new Temps();
+
+        //modifs
+        List<string> correction = new List<string>();
+        //----------------
         public PageJeuF()
         {
             this.InitializeComponent();
@@ -54,6 +58,7 @@ namespace GeoDrapeau
             temps.start();
 
             ucFinPartie.Visibility = Visibility.Collapsed;
+            ucCorrection.Visibility = Visibility.Collapsed;
             menuApparait(false);
 
             Temps.timer.Tick += maj;
@@ -132,8 +137,14 @@ namespace GeoDrapeau
                 btnPause.IsEnabled = false;
                 temps.EstFini = false;
 
+                
+
                 ucFinPartie.setScore(lblScore.Text.ToString());
                 ucFinPartie.Visibility = Visibility.Visible;
+                //modifs
+                ucCorrection.afficheCorrection(correction);
+                ucCorrection.Visibility = Visibility.Visible;
+                //-----------
             }
             else
             {
@@ -184,6 +195,9 @@ namespace GeoDrapeau
                 score+=drapeauSoluce.Niveau;
                 lblScore.Text = score.ToString();
             }
+            //Modifs
+            correction.Add(bt.Content.ToString()+":"+drapeauSoluce.Nom);
+            //--------------
             jouer();
         }
 

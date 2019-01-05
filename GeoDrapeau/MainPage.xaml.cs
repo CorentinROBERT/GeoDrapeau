@@ -38,7 +38,7 @@ namespace GeoDrapeau
             }
         }
 
-            private void btnJouer_Click(object sender, RoutedEventArgs e)
+        private void btnJouer_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(ChoixMode));
         }

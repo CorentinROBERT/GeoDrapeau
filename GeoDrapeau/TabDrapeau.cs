@@ -477,5 +477,16 @@ namespace GeoDrapeau
                 }
             }
         }
+        public Drapeau chercheDrapeauNom(string nom)
+        {
+            foreach (Drapeau tmp in this)
+            {
+                if (nom.Equals(tmp.Nom))
+                {
+                    return tmp;
+                }
+            }
+            return new Drapeau("",0,"");
+        }
     }
 }

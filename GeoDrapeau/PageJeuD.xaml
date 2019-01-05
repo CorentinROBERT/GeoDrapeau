@@ -25,7 +25,7 @@
         <Image x:Name="imgDrapeau" HorizontalAlignment="Center" Height="421" Margin="0,147,0,0" VerticalAlignment="Top" Width="367" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Source="/Assets/StoreLogo.png" Stretch="Uniform"/>
         <TextBlock x:Name="lblTImer" Height="106" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="0,0,1186,846" HorizontalAlignment="Left"><Run Text="TIMER"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="lblScore" HorizontalAlignment="Right" Height="100" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="0,0,0,852" Text="Score"/>
-        
+
         <Grid x:Name="gridButton" Margin="0,834,0,0" VerticalAlignment="Stretch">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -45,7 +45,9 @@
         <Rectangle x:Name="rect" Margin="0,48,0,0" Fill="#FF7C7C7C"/>
         <Button x:Name="btnRecommencer" Content="Recommencer" HorizontalAlignment="Stretch" Height="151" Margin="419,239,418,0" VerticalAlignment="Top" FontSize="48" Click="BtnRecommencer_Click"/>
         <Button x:Name="btnMenuPrincipal" Content="Menu principal" HorizontalAlignment="Stretch" Height="151" Margin="419,584,418,0" VerticalAlignment="Top" FontSize="48" Click="Button_Click"/>
-        <local:FinPartie x:Name="ucFinPartie" HorizontalAlignment="Center" Height="304" Margin="0,0,0,0" VerticalAlignment="Center" Width="396"/>
+        <local:FinPartie x:Name="ucFinPartie" HorizontalAlignment="Left" Height="300" Margin="376,0,0,0" VerticalAlignment="Center" Width="400"/>
+        <local:Correction x:Name="ucCorrection" HorizontalAlignment="Left" Height="300" Margin="822,0,0,0" VerticalAlignment="Center" Width="441"></local:Correction>
+
         <Grid.Resources>
             <!-- animations. -->
             <Storyboard x:Name="animImage">

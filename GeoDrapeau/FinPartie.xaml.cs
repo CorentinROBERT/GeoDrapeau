@@ -28,7 +28,6 @@ namespace GeoDrapeau
     {
         Frame rootFrame = Window.Current.Content as Frame;
         List<Joueur> tmp = new List<Joueur>();
-        int niveau;
         public FinPartie()
         {
             this.InitializeComponent();
