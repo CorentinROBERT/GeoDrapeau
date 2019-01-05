@@ -6,18 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400" Height="421.5">
 
-    <Grid Background="White" Margin="0,0,0,10">
-        <ListView x:Name="listCorrection" Margin="0,61,0,0" Background="#FFAEAEAE" RenderTransformOrigin="0.5,0.5" FontSize="24" HorizontalAlignment="Left" SelectionChanged="ListCorrection_SelectionChanged" Width="283">
+    <Grid Background="White" Margin="0,0,0,0">
+        <ListView x:Name="listCorrection" Margin="0,113,0,0" Background="#FFAEAEAE" RenderTransformOrigin="0.5,0.5" FontSize="24" HorizontalAlignment="Left" SelectionChanged="ListCorrection_SelectionChanged" Width="283">
             <ListView.RenderTransform>
                 <CompositeTransform SkewY="0" TranslateY="0"/>
             </ListView.RenderTransform>
         </ListView>
-        <TextBlock Height="34" Margin="83,0,49,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" HorizontalAlignment="Stretch"><Run Text="Réponses"/><Run Text=" "/><Run Text=":"/><Run Text=" "/><Run Text="Correction"/></TextBlock>
-        <Image x:Name="imgCorrige" HorizontalAlignment="Left" Height="100" Margin="290,61,0,0" VerticalAlignment="Top" Width="100" FocusVisualPrimaryBrush="Black" FocusVisualSecondaryBrush="Black"/>
-        <TextBlock Margin="0,36,0,0" Text="Cliquez sur une ligne pour voir le drapeau de correction" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#7F000000" HorizontalAlignment="Center" Width="400"/>
+        <TextBlock Height="34" Margin="145,0,137,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" Text="Correction" HorizontalAlignment="Center"/>
+        <Image x:Name="imgCorrige" HorizontalAlignment="Left" Height="100" Margin="290,113,0,0" VerticalAlignment="Top" Width="100" FocusVisualPrimaryBrush="Black" FocusVisualSecondaryBrush="Black"/>
+        <TextBlock Margin="10,88,0,0" Text="Votre réponse : Correction" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#7F000000" HorizontalAlignment="Left" Width="179"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,39,0,0" Text="Sélectionnez la ligne pour afficher le drapeau de correction" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="380" FontSize="14"/>
 
     </Grid>
 </UserControl>

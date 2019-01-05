@@ -26,6 +26,7 @@ namespace GeoDrapeau
         {
             this.InitializeComponent();
             tabDrapeaux.chargerDonnee();
+
         }
 
         public void afficheCorrection(List<string> liste)
@@ -34,6 +35,7 @@ namespace GeoDrapeau
             {
                 listCorrection.Items.Add(tmp);
             }
+            listCorrection.SelectedIndex = 0;
         }
 
         private void ListCorrection_SelectionChanged(object sender, SelectionChangedEventArgs e)

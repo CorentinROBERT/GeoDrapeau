@@ -68,6 +68,14 @@ namespace GeoDrapeau
         public void maj(object sender, object e)
         {
             lblTImer.Text = temps.TempsDepart.ToString();
+            if (temps.TempsDepart < 11 && temps.TempsDepart > 5)
+            {
+                lblTImer.Foreground = new SolidColorBrush(Windows.UI.Colors.Orange);
+            }
+            if (temps.TempsDepart < 5)
+            {
+                lblTImer.Foreground = new SolidColorBrush(Windows.UI.Colors.Red);
+            }
         }
         public void setImage(string imagePath)
         {
@@ -201,10 +209,12 @@ namespace GeoDrapeau
             {
                 score += drapeauSoluce.Niveau;
                 lblScore.Text = score.ToString();
+                correction.Add(bt.Content.ToString() + ":" + drapeauSoluce.Nom + ":CORRECT");
             }
-            //Modifs
-            correction.Add(bt.Content.ToString() + ":" + drapeauSoluce.Nom);
-            //--------------
+            else
+            {
+                correction.Add(bt.Content.ToString() + ":" + drapeauSoluce.Nom + ":FAUX");
+            }
             jouer();
         }
         private void BtnRecommencer_Click(object sender, RoutedEventArgs e)
