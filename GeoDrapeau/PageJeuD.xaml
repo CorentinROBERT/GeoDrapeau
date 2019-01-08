@@ -24,9 +24,9 @@
         </CommandBar>
         <Image x:Name="imgDrapeau" HorizontalAlignment="Center" Height="421" Margin="0,147,0,0" VerticalAlignment="Top" Width="367" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Source="/Assets/StoreLogo.png" Stretch="Uniform"/>
         <TextBlock x:Name="lblTImer" Height="106" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="530,0,867,203" Foreground="Black" Text="90"/>
-        <TextBlock HorizontalAlignment="Left" Height="101" Margin="256,691,0,0" Text="Temps :" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" FontSize="72"/>
+        <TextBlock HorizontalAlignment="Left" Height="101" Margin="262,0,0,208" Text="Temps :" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="252" FontSize="72"/>
         <TextBlock x:Name="lblScore" HorizontalAlignment="Stretch" Height="100" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" Margin="1441,0,4,209"><Run Text="0"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Stretch" Height="99" Margin="1212,691,66,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="72"><Run Text="Score"/><Run Text=" : "/></TextBlock>
+        <TextBlock Height="99" Margin="1207,0,71,210" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="72" HorizontalAlignment="Stretch"><Run Text="Score"/><Run Text=" : "/></TextBlock>
 
         <Grid x:Name="gridButton" Margin="0,834,0,0" VerticalAlignment="Stretch">
             <Grid.Background>
