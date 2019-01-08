@@ -26,7 +26,7 @@ namespace GeoDrapeau
     public sealed partial class PageJeuF : Page
     {
         int score = 0;
-        const int TEMPS_DEPART = 90;
+        const int TEMPS_DEPART = 20;
         TabDrapeau tabDrapeaux = new TabDrapeau();
         TabDrapeau facile = new TabDrapeau();
         Drapeau drapeauSoluce = new Drapeau("",0,"");
